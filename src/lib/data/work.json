@@ -1,0 +1,26 @@
+{
+	"stad_turnhout": {
+		"title": "Stad Turnhout City Council",
+		"role": "Administrative assistant",
+		"date": "July 2024",
+		"location": "Turnhout, Belgium",
+		"image": "/assets/logos/stad_turnhout.webp",
+		"content": [
+			"Organized and created digital records of historical environmental permits",
+			"Used GIS tools to map and pinpoint locations of historical environmental plans and permits",
+			"Researched property records to verify the exact locations of historical sites"
+		]
+	},
+	"bpost": {
+		"title": "Bpost Belgium",
+		"role": "Counter clerk",
+		"date": "March 2023 - August 2024",
+		"location": "Turnhout, Belgium",
+		"image": "/assets/logos/bpost_logo.webp",
+		"content": [
+			"Handling all mail and package services",
+			"Handling select financial services ",
+			"Initial contact for customer inquiries and assistance"
+		]
+	}
+}

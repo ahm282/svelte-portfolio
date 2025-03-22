@@ -1,0 +1,26 @@
+{
+	"hamk": {
+		"title": "Häme University of Applied Sciences",
+		"degree": "Bsc. in Business Information Technology",
+		"date": "August 2024 - December 2025",
+		"location": "Hämeenlinna, Finland",
+		"image": "/assets/logos/hamk_logo.webp",
+		"content": [
+			"'Double degree' programme",
+			"Erasmus+ exchange programme",
+			"Specialization in web development and AI"
+		]
+	},
+	"thomas_more": {
+		"title": "Thomas More Kempen University of Applied Sciences",
+		"degree": "Bsc. in Applied Information Technology",
+		"date": "September 2022 - June 2025",
+		"location": "Geel, Belgium",
+		"image": "/assets/logos/thomasmore_logo.svg",
+		"content": [
+			"Member of the programme's student council",
+			"Member of SIN (Student association for hosting infrastructure)",
+			"Member of ESN (Erasmus Student Network)"
+		]
+	}
+}

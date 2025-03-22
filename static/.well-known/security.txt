@@ -1,0 +1,5 @@
+Contact: mailto:ahmedhosny282@gmail.com
+Expires: 2025-09-24T21:00:00.000Z
+Canonical: https://ahmedmahgoub.be/security.txt
+Canonical: https://ahmedmahgoub.be/.well-known/security.txt
+Preferred-Languages: en,nl,ar,fr

@@ -1,0 +1,82 @@
+{
+	"TravelBuddy": {
+		"projectName": "Travel Buddy",
+		"description": "Your personal AI travel planner. A React Native app that takes care of your travel plans.",
+		"techStack": ["React Native", "Google Cloud", "Firebase", "MongoDB"],
+		"images": ["/assets/projects/TravelBuddy.webp"],
+		"featured": true,
+		"content": [
+			"Travel Buddy is an Android app that helps you plan your trips. It uses AI to suggest destinations, activities, and accommodations based on your preferences, budget, and travel dates.",
+			"The app is built using React Native, MongoDB, Firebase and Google Cloud Vertex AI. It features a user-friendly interface that allows you to easily input your travel details and receive personalized recommendations.",
+			"A history of your past trips is stored in the app, so you can easily refer back to them when planning future trips. Favorite trips can be saved for quick access.",
+			"I worked on this project as part of a team of four developers. My role was to design and implement the backend and integrate the AI features. I also contributed to the frontend development and testing."
+		]
+	},
+	"LinuxWebservices": {
+		"projectName": "Linux Web Services",
+		"description": "Automated Kubernetes setup, deployment, and monitoring with Vagrant and Prometheus.",
+		"techStack": ["Kubernetes", "Docker", "Vagrant", "Prometheus"],
+		"images": ["/assets/projects/LinuxWebservices.webp"],
+		"featured": false,
+		"content": [
+			"This project is an automated setup for deploying and monitoring web services using Kubernetes, Docker, Vagrant, and Prometheus. It provides a complete solution for setting up a scalable and reliable web service infrastructure.",
+			"The project includes a Vagrantfile that sets up a Kubernetes cluster with multiple nodes. It also includes Dockerfiles for building the web service containers and Kubernetes configuration files for deploying the services.",
+			"Prometheus is used for monitoring the health and performance of the web services. It collects metrics from the services and provides a dashboard for visualizing the data in Graphana.",
+			"I developed this project as part of a course on Linux web services. It was a great learning experience that helped me gain a deeper understanding of containerization, orchestration, and monitoring tools."
+		]
+	},
+	"WTC": {
+		"projectName": "WTC-Roland Club Website",
+		"description": "A website for the WTC-Roland cycling club, to manage events and memberships.",
+		"techStack": ["Laravel", "Livewire", "Tailwind", "Alpine.js"],
+		"images": ["/assets/projects/WTCHome.webp"],
+		"featured": true,
+		"content": [
+			"The WTC-Roland Club website is a Laravel-based web application that provides a platform for managing club events and memberships. It features a user-friendly interface that allows club management to create and manage events, track memberships, and communicate with members through emails.",
+			"The website is built using Laravel, Livewire, Tailwind CSS, and Alpine.js. It includes a custom admin panel for managing events, memberships, and user accounts. The admin panel provides tools for creating new events, sending notifications to members, and editing email templates.",
+			"I developed this project as part of a team school project. My role was to design and implement parts of the backend functionality, mainly the email system. I also contributed to the frontend design and development.",
+			"The website has been well received by the teachers at our school. It has been a great learning experience that has helped me improve my skills in web development and dealing with real-world requirements."
+		]
+	},
+	"CTK": {
+		"projectName": "Comedy Tegen Kanker",
+		"description": "Onepager for a charity event to raise funds for cancer research. A volunteer project.",
+		"techStack": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+		"images": ["/assets/projects/CTK.webp"],
+		"featured": true,
+		"content": [
+			"Volunteering for 'Comedy Tegen Kanker', a charity event supporting cancer research, I was tasked with creating their online presence. The goal was to build a single-page website providing event details, performer information, and links for ticket sales.",
+			"I utilized HTML, CSS, JavaScript, and Bootstrap to develop a responsive website that adapts to different screen sizes. This ensured accessibility for all potential attendees and donors, regardless of their device.",
+			"Launching the website provided a platform to promote the event and facilitate fundraising, making my contribution a rewarding experience in supporting a significant cause."
+		],
+		"liveUrl": "https://comedy.sinners.be/",
+		"githubUrl": "https://github.com/ahm282/ComedyTegenKanker"
+	},
+	"Proxmox": {
+		"projectName": "Personal Homelab",
+		"description": "A personal homelab setup for self-hosting services and learning new technologies.",
+		"techStack": ["Proxmox", "Docker", "Kubernetes", "Raspberry Pi"],
+		"images": ["/assets/projects/Proxmox.webp"],
+		"featured": true,
+		"content": [
+			"In my free time, I enjoy setting up and maintaining a personal homelab for self-hosting services and experimenting with new technologies. My homelab runs on Proxmox, a virtualization platform that allows me to create and manage virtual machines and containers.",
+			"I use Docker and Kubernetes to deploy and manage the services in my homelab. Some of the services I host include this website, an OpenWebUI instance for running AI chatbots, a Jellyfin media server, and a Pi-hole ad blocker.",
+			"I also have a few Raspberry Pi's that I use for testing and learning purposes. It's a fun and educational way to explore different technologies and build new projects.",
+			"My homelab has been a valuable resource for learning and experimenting with new technologies. It has helped me gain hands-on experience with virtualization, containerization, networking and cyber security."
+		]
+	},
+	"UC": {
+		"projectName": "Requirements Analysis",
+		"description": "Modeling and analysis of requirements for a software project using UML diagrams.",
+		"techStack": ["UML", "Wireframes", "Trello"],
+		"images": ["/assets/projects/UCDiagram.webp"],
+		"featured": false,
+		"content": [
+			"This project involved modeling and analyzing the requirements for a software project using UML diagrams. The project was part of a course on software modelling and requirements analysis.",
+			"The project included creating use case diagrams and class diagrams to model the requirements of the software project. The diagrams were used to document the functional and non-functional requirements of the system.",
+			"Wireframes were created to visualize the user interface of the software. The wireframes were used to gather feedback from stakeholders and refine the design of the system.",
+			"Trello was used to manage the project requirements and track the progress of the project. The project was part of the WTC-Roland Club website project, which aimed to create a platform for managing club events and memberships.",
+			"The project helped me gain a deeper understanding of analyzing and modeling requirements based on client needs. It was a valuable learning experience that has helped me improve my skills in software design and requirements analysis."
+		]
+	}
+}

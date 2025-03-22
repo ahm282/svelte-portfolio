@@ -1,0 +1,68 @@
+{
+	"chess": {
+		"name": "Chess",
+		"icon": "fluent:chess-20-regular",
+		"description": "Chess is my favorite board game. I enjoy the strategic thinking and mental challenge it provides.",
+		"subtext": "I’m still deciding whether that was a clever sacrifice or just a blunder.",
+		"content": [
+			"I enjoy trying different strategies and tactics improve my skills.",
+			"Chess is a great way to exercise my mind, improve my concentration, and have fun at the same time.",
+			"I've been playing chess for years and I'm always looking to learn more and get better."
+		]
+	},
+	"coding": {
+		"name": "Coding",
+		"icon": "lucide:code-xml",
+		"description": "The process of taking an idea and building it into something tangible with code is incredibly satisfying.",
+		"subtext": "I'm a fan of free, open-source software (FOSS). Most of my projects are open-source and available on my GitHub profile.",
+		"content": [
+			"I enjoy working on a variety of projects, from web development to mobile applications.",
+			"Coding allows me to express my creativity and problem-solving skills in a tangible way.",
+			"Building something from scratch and seeing it come to life is incredibly rewarding."
+		]
+	},
+	"SIN": {
+		"name": "Student Information Network",
+		"icon": "mdi:math-sin",
+		"description": "A web hosting platform for students by students at Thomas More Geel. I was treasurer and part of the maintenance team.",
+		"subtext": "SIN sparked my interest in having my own home lab and dev environment.",
+		"content": [
+			"SIN is a platform that provides web hosting services to students at Thomas More Geel.",
+			"I was part of the team, working on the maintenance of the platform. I also served as the treasurer of the organization.",
+			"I learned a lot about web hosting, networking, server management, and working in a team to achieve a common goal."
+		]
+	},
+	"home-lab": {
+		"name": "Home Lab",
+		"icon": "lucide:server",
+		"description": "Building and maintaining my own home lab has been a great learning experience.",
+		"subtext": "I should probably label this mess... or call it modern art.",
+		"content": [
+			"My home lab is a collection of servers that I use to experiment with different technologies.",
+			"I enjoy setting up new services, testing out different software, and learning more about how things work behind the scenes.",
+			"Having a home lab has allowed me to gain hands-on experience and develop my skills as a sysadmin and developer."
+		]
+	},
+	"travelling": {
+		"name": "Travelling",
+		"icon": "lucide:plane",
+		"image": "/assets/image/hobbies/travel.webp",
+		"description": "Visited 8 countries and counting. I love the thrill of exploring new places, meeting new people, and trying new things.",
+		"subtext": "Recent adventure: Visiting the Lapland region in Finland.",
+		"content": [
+			"Stepping off the plane in a new place is always an exhilarating experience.",
+			"I've been lucky enough to visit some incredible destinations, from bustling cities to remote natural wonders."
+		]
+	},
+	"hiking": {
+		"name": "Hiking",
+		"icon": "lucide:trees",
+		"description": "Exploring the great outdoors and challenging myself with new trails is a favorite pastime of mine.",
+		"image": "/assets/image/hobbies/hike.webp",
+		"subtext": "If I’m not slightly lost, it’s not a real hike.",
+		"content": [
+			"During my stay in Finland, I discovered a love for hiking and exploring the beautiful forests and lakes of the Finnish countryside.",
+			"Hiking is a great way to clear my mind, get some exercise, and appreciate the beauty of the world around me."
+		]
+	}
+}
