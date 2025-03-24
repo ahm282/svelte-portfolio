@@ -18,8 +18,8 @@
 	class="cursor-pointer hover:bg-gray-50 dark:hover:bg-zinc-900"
 	onclick={() => (detailsOpen = true)}
 >
-	<Card.CardHeader class="md:min-h-24">
-		<Card.CardTitle class="font-primary">{project.projectName}</Card.CardTitle>
+	<Card.CardHeader class="font-primary md:min-h-24">
+		<Card.CardTitle class="font-bold">{project.projectName}</Card.CardTitle>
 		<Card.CardDescription class="pt-1">{project.description}</Card.CardDescription>
 	</Card.CardHeader>
 	<Card.CardContent class="">

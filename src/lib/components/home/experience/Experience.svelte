@@ -6,7 +6,7 @@
 
 <div class="mx-auto my-5">
 	<Tabs.Root value="work" class="w-full">
-		<Tabs.TabsList class="w-full gap-x-1">
+		<Tabs.TabsList class="w-full gap-x-1 border">
 			<Tabs.TabsTrigger value="work" class="w-6/12">Work</Tabs.TabsTrigger>
 			<Tabs.TabsTrigger value="education" class="w-6/12">Education</Tabs.TabsTrigger>
 		</Tabs.TabsList>

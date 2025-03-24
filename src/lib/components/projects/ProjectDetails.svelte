@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { MediaQuery } from 'svelte/reactivity';
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import * as Drawer from '$lib/components/ui/drawer/index.js';
@@ -11,9 +12,19 @@
 	let { project, open = $bindable(false) }: { project: Project; open?: boolean } = $props();
 
 	const isDesktop = new MediaQuery('(min-width: 768px)');
+
+	// User agent detection for drawer and dialog rendering
+	let userAgent = '';
+	let isMobileUA = $state(false);
+
+	onMount(() => {
+		userAgent = navigator.userAgent;
+		isMobileUA = /Mobi|Android/i.test(userAgent);
+	});
 </script>
 
-{#if isDesktop.current}
+<!-- Project details dialog - Desktop -->
+{#if isDesktop.current || !isMobileUA}
 	<Dialog.Root bind:open>
 		<Dialog.Content
 			class="sm:max-w-[425px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px] 2xl:max-w-[1300px]"
@@ -49,9 +60,16 @@
 				<h3>Technologies used:</h3>
 				<div class="flex gap-x-1">{@render renderTechStack(project.techStack)}</div>
 			</div>
-			<div class="flex items-center justify-center gap-x-2">
+			<div
+				id="images"
+				class="mx-auto flex w-fit items-center justify-center rounded border border-slate-300 p-1 shadow dark:border-slate-800"
+			>
 				{#each project.images as image}
-					<img src={image} alt={project.projectName} class="w-5/12 rounded-sm" />
+					<img
+						src={image}
+						alt={project.projectName}
+						class="max-h-72 w-5/12 rounded-sm border object-contain lg:w-auto"
+					/>
 				{/each}
 			</div>
 			{@render renderProjectContent(project.content)}
@@ -72,6 +90,7 @@
 			</Dialog.Footer>
 		</Dialog.Content>
 	</Dialog.Root>
+	<!-- Project details drawer - Mobile -->
 {:else}
 	<Drawer.Root bind:open>
 		<Drawer.Content>
@@ -105,13 +124,19 @@
 			<div class="flex flex-wrap gap-x-2">
 				<div class="mx-auto flex gap-x-1">{@render renderTechStack(project.techStack)}</div>
 			</div>
-			<div class="mb-1 mt-4 flex flex-col items-center justify-center gap-y-2">
-				{#each project.images as image}
-					<img src={image} alt={project.projectName} class="w-10/12 rounded-sm" />
-				{/each}
-			</div>
-			<div>
-				{@render renderProjectContent(project.content)}
+			<div class="flex flex-col items-center justify-center gap-x-2 md:flex-row-reverse">
+				<div class="mb-1 mt-4 flex flex-col items-center justify-center gap-y-2">
+					{#each project.images as image}
+						<img
+							src={image}
+							alt={project.projectName}
+							class="max-h-64 w-10/12 rounded-sm object-cover md:max-h-36 md:w-full"
+						/>
+					{/each}
+				</div>
+				<div class="md:w-8/12">
+					{@render renderProjectContent(project.content)}
+				</div>
 			</div>
 			<Dialog.Footer class="mx-6 mb-4 mt-2">
 				<!-- For future statistics! -->
@@ -129,9 +154,11 @@
 
 {#snippet renderProjectContent(content: Project['content'])}
 	{#if content && content.length}
-		<div class="mb-2 mt-4 max-h-80 space-y-4 overflow-y-auto px-6 pb-3 sm:px-0">
+		<div
+			class="mx-auto mb-2 mt-4 max-h-72 w-full space-y-4 overflow-y-auto px-6 pb-3 md:max-h-36 lg:max-h-80 lg:w-10/12"
+		>
 			{#each content as paragraph}
-				<p class="font-primary text-sm text-gray-700 dark:text-gray-100 sm:text-base">
+				<p class="mx-auto font-primary text-sm text-gray-700 dark:text-gray-100 sm:text-base">
 					{paragraph}
 				</p>
 			{/each}
