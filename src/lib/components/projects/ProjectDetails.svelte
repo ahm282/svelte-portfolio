@@ -24,7 +24,7 @@
 </script>
 
 <!-- Project details dialog - Desktop -->
-{#if isDesktop.current || !isMobileUA}
+{#if isDesktop.current && !isMobileUA}
 	<Dialog.Root bind:open>
 		<Dialog.Content
 			class="sm:max-w-[425px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px] 2xl:max-w-[1300px]"
@@ -62,13 +62,13 @@
 			</div>
 			<div
 				id="images"
-				class="mx-auto flex w-fit items-center justify-center rounded border border-slate-300 p-1 shadow dark:border-slate-800"
+				class="mx-auto flex w-fit items-center justify-center rounded border border-slate-300 p-1 shadow dark:border-slate-800 md:w-fit md:border-none md:shadow-none lg:border lg:shadow"
 			>
 				{#each project.images as image}
 					<img
 						src={image}
 						alt={project.projectName}
-						class="max-h-72 w-5/12 rounded-sm border object-contain lg:w-auto"
+						class="max-h-72 w-5/12 rounded-sm border object-contain md:shadow lg:w-auto"
 					/>
 				{/each}
 			</div>
@@ -93,7 +93,7 @@
 	<!-- Project details drawer - Mobile -->
 {:else}
 	<Drawer.Root bind:open>
-		<Drawer.Content>
+		<Drawer.Content class="max-h-[99svh]">
 			<Drawer.Header>
 				<Drawer.Title>{project.projectName}</Drawer.Title>
 				<Drawer.Description>{project.description}</Drawer.Description>
@@ -125,12 +125,14 @@
 				<div class="mx-auto flex gap-x-1">{@render renderTechStack(project.techStack)}</div>
 			</div>
 			<div class="flex flex-col items-center justify-center gap-x-2 md:flex-row-reverse">
-				<div class="mb-1 mt-4 flex flex-col items-center justify-center gap-y-2">
+				<div
+					class="mb-1 mt-4 flex w-fit flex-col items-center justify-center rounded dark:border-slate-800"
+				>
 					{#each project.images as image}
 						<img
 							src={image}
 							alt={project.projectName}
-							class="max-h-64 w-10/12 rounded-sm object-cover md:max-h-36 md:w-full"
+							class="max-h-64 w-9/12 rounded-md border border-slate-300 object-cover p-0.5 md:max-h-36 md:w-auto"
 						/>
 					{/each}
 				</div>
@@ -155,7 +157,7 @@
 {#snippet renderProjectContent(content: Project['content'])}
 	{#if content && content.length}
 		<div
-			class="mx-auto mb-2 mt-4 max-h-72 w-full space-y-4 overflow-y-auto px-6 pb-3 md:max-h-36 lg:max-h-80 lg:w-10/12"
+			class="mx-auto mb-2 mt-4 max-h-80 w-full space-y-4 overflow-y-auto px-6 pb-3 md:max-h-36 lg:w-10/12"
 		>
 			{#each content as paragraph}
 				<p class="mx-auto font-primary text-sm text-gray-700 dark:text-gray-100 sm:text-base">
