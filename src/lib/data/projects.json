@@ -12,19 +12,6 @@
 			"I worked on this project as part of a team of four developers. My role was to design and implement the backend and integrate the AI features. I also contributed to the frontend development and testing."
 		]
 	},
-	"LinuxWebservices": {
-		"projectName": "Linux Web Services",
-		"description": "Automated Kubernetes setup, deployment, and monitoring with Vagrant and Prometheus.",
-		"techStack": ["Kubernetes", "Docker", "Vagrant", "Prometheus"],
-		"images": ["/assets/projects/LinuxWebservices.webp"],
-		"featured": false,
-		"content": [
-			"This project is an automated setup for deploying and monitoring web services using Kubernetes, Docker, Vagrant, and Prometheus. It provides a complete solution for setting up a scalable and reliable web service infrastructure.",
-			"The project includes a Vagrantfile that sets up a Kubernetes cluster with multiple nodes. It also includes Dockerfiles for building the web service containers and Kubernetes configuration files for deploying the services.",
-			"Prometheus is used for monitoring the health and performance of the web services. It collects metrics from the services and provides a dashboard for visualizing the data in Graphana.",
-			"I developed this project as part of a course on Linux web services. It was a great learning experience that helped me gain a deeper understanding of containerization, orchestration, and monitoring tools."
-		]
-	},
 	"WTC": {
 		"projectName": "WTC-Roland Club Website",
 		"description": "A website for the WTC-Roland cycling club, to manage events and memberships.",
@@ -51,6 +38,38 @@
 		],
 		"liveUrl": "https://comedy.sinners.be/",
 		"githubUrl": "https://github.com/ahm282/ComedyTegenKanker"
+	},
+	"LinuxWebservices": {
+		"projectName": "Linux Web Services",
+		"description": "Automated Kubernetes setup, deployment, and monitoring with Vagrant and Prometheus.",
+		"techStack": ["Kubernetes", "Docker", "Vagrant", "Prometheus"],
+		"images": ["/assets/projects/LinuxWebservices.webp"],
+		"featured": false,
+		"content": [
+			"This project is an automated setup for deploying and monitoring web services using Kubernetes, Docker, Vagrant, and Prometheus. It provides a complete solution for setting up a scalable and reliable web service infrastructure.",
+			"The project includes a Vagrantfile that sets up a Kubernetes cluster with multiple nodes. It also includes Dockerfiles for building the web service containers and Kubernetes configuration files for deploying the services.",
+			"Prometheus is used for monitoring the health and performance of the web services. It collects metrics from the services and provides a dashboard for visualizing the data in Graphana.",
+			"I developed this project as part of a course on Linux web services. It was a great learning experience that helped me gain a deeper understanding of containerization, orchestration, and monitoring tools."
+		]
+	},
+	"SimpleNotesApp": {
+		"projectName": "Sticky Notes App",
+		"description": "A simple notes app built with React and Firebase.",
+		"techStack": ["React Native", "Expo"],
+		"images": [
+			"/assets/projects/sticky-notes/options-menu.webp",
+			"/assets/projects/sticky-notes/homescreen.webp",
+			"/assets/projects/sticky-notes/create-note.webp",
+			"/assets/projects/sticky-notes/tags-mgmt.webp"
+		],
+		"featured": false,
+		"content": [
+			"The Sticky Notes App is a simple notes app that allows users to create, edit, and delete notes. It is built using React Native and Expo, making it easy to run on both Android and iOS devices.",
+			"The app features a clean and intuitive interface that allows users to quickly create and manage their notes. Users can also customize the appearance of their notes with different colors and tags.",
+			"I developed this app mainly because I needed a basic and snappy notes app for my phone. I wanted to create something that was easy to use and didn't have any unnecessary features making it slow.",
+			"It was a fun project to work on and helped me improve my skills in React Native and mobile app development. I intended to add more features in the future, such as syncing notes with the cloud and adding reminders, but I haven't had the time to do so yet."
+		],
+		"githubUrl": "https://github.com/ahm282/stickynotesapp"
 	},
 	"Proxmox": {
 		"projectName": "Personal Homelab",
