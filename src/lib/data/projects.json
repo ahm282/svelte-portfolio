@@ -1,4 +1,23 @@
 {
+	"Wallet": {
+		"projectName": "Wallet",
+		"description": "A personal finance management web app. Built with microservices.",
+		"techStack": ["Microservices", "React", "Java Spring Boot", "NestJS", "PostgreSQL", "MongoDB"],
+		"images": [
+			"/assets/projects/wallet/dashboard_dark.webp",
+			"/assets/projects/wallet/login_screen.webp",
+			"/assets/projects/wallet/dashboard_light.webp"
+		],
+		"featured": true,
+		"content": [
+			"Wallet is a personal finance management web application that allows users to track their expenses, income, and savings. It provides a user-friendly interface for managing personal finances.",
+			"The project is built using a microservices architecture, with the frontend developed in React and the backend implemented using Java Spring Boot, NestJS and Python. The application uses MariaDB, PostgreSQL and MongoDB for data storage.",
+			"I worked on this project as part of my thesis project at HAMK University of Applied Sciences. I developed both the frontend and backend of the application, focusing on the user interface and user experience.",
+			"Chaos Engineering was used to test the resilience of the microservices architecture. The project also included a CI/CD pipeline for automated testing and deployment.",
+			"The project was a great learning experience that helped me improve my skills in web development, microservices architecture, and personal finance management. I also gained valuable experience in working with different technologies and frameworks."
+		],
+		"githubUrl": "https://github.com/ahm282/wallet"
+	},
 	"TravelBuddy": {
 		"projectName": "Travel Buddy",
 		"description": "Your personal AI travel planner. A React Native app that takes care of your travel plans.",
@@ -76,7 +95,7 @@
 		"description": "A personal homelab setup for self-hosting services and learning new technologies.",
 		"techStack": ["Proxmox", "Docker", "Kubernetes", "Raspberry Pi"],
 		"images": ["/assets/projects/Proxmox.webp"],
-		"featured": true,
+		"featured": false,
 		"content": [
 			"In my free time, I enjoy setting up and maintaining a personal homelab for self-hosting services and experimenting with new technologies. My homelab runs on Proxmox, a virtualization platform that allows me to create and manage virtual machines and containers.",
 			"I use Docker and Kubernetes to deploy and manage the services in my homelab. Some of the services I host include this website, an OpenWebUI instance for running AI chatbots, a Jellyfin media server, and a Pi-hole ad blocker.",

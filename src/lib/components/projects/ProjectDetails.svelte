@@ -62,13 +62,13 @@
 			</div>
 			<div
 				id="images"
-				class="mx-auto flex w-fit items-center justify-center rounded border border-slate-300 p-1 shadow dark:border-slate-800 md:w-fit md:border-none md:shadow-none lg:border lg:shadow"
+				class="my-4 flex w-full gap-4 overflow-x-auto rounded border border-slate-300 p-4 dark:border-slate-800"
 			>
 				{#each project.images as image}
 					<img
 						src={image}
 						alt={project.projectName}
-						class="max-h-72 w-5/12 rounded-sm border object-contain md:shadow lg:w-auto"
+						class="h-64 flex-none rounded-sm object-contain"
 					/>
 				{/each}
 			</div>
@@ -122,19 +122,23 @@
 				{/if}
 			</div>
 			<div class="flex flex-wrap gap-x-2">
-				<div class="mx-auto flex gap-x-1">{@render renderTechStack(project.techStack)}</div>
+				<div class="flex w-full overflow-x-auto px-4 pb-2">
+					<div class="flex flex-nowrap gap-x-1">
+						{@render renderTechStack(project.techStack)}
+					</div>
+				</div>
 			</div>
 			<div class="flex flex-col items-center justify-center gap-x-2 md:flex-row-reverse">
-				<div
-					class="mb-1 mt-4 flex w-fit flex-col items-center justify-center rounded dark:border-slate-800"
-				>
-					{#each project.images as image}
-						<img
-							src={image}
-							alt={project.projectName}
-							class="max-h-64 w-9/12 rounded-md border border-slate-300 object-cover p-0.5 md:max-h-36 md:w-auto"
-						/>
-					{/each}
+				<div class="my-4 px-4">
+					<div class="flex gap-4 overflow-x-auto">
+						{#each project.images as image}
+							<img
+								src={image}
+								alt={project.projectName}
+								class="h-48 flex-none rounded-md object-contain"
+							/>
+						{/each}
+					</div>
 				</div>
 				<div class="md:w-8/12">
 					{@render renderProjectContent(project.content)}
