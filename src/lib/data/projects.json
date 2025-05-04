@@ -16,7 +16,8 @@
 			"Chaos Engineering was used to test the resilience of the microservices architecture. The project also included a CI/CD pipeline for automated testing and deployment.",
 			"The project was a great learning experience that helped me improve my skills in web development, microservices architecture, and personal finance management. I also gained valuable experience in working with different technologies and frameworks."
 		],
-		"githubUrl": "https://github.com/ahm282/wallet"
+		"githubUrl": "https://github.com/ahm282/wallet",
+		"layout": "imageGallery"
 	},
 	"TravelBuddy": {
 		"projectName": "Travel Buddy",
@@ -29,7 +30,8 @@
 			"The app is built using React Native, MongoDB, Firebase and Google Cloud Vertex AI. It features a user-friendly interface that allows you to easily input your travel details and receive personalized recommendations.",
 			"A history of your past trips is stored in the app, so you can easily refer back to them when planning future trips. Favorite trips can be saved for quick access.",
 			"I worked on this project as part of a team of four developers. My role was to design and implement the backend and integrate the AI features. I also contributed to the frontend development and testing."
-		]
+		],
+		"layout": "fullWidth"
 	},
 	"WTC": {
 		"projectName": "WTC-Roland Club Website",
@@ -42,7 +44,8 @@
 			"The website is built using Laravel, Livewire, Tailwind CSS, and Alpine.js. It includes a custom admin panel for managing events, memberships, and user accounts. The admin panel provides tools for creating new events, sending notifications to members, and editing email templates.",
 			"I developed this project as part of a team school project. My role was to design and implement parts of the backend functionality, mainly the email system. I also contributed to the frontend design and development.",
 			"The website has been well received by the teachers at our school. It has been a great learning experience that has helped me improve my skills in web development and dealing with real-world requirements."
-		]
+		],
+		"layout": "splitView"
 	},
 	"CTK": {
 		"projectName": "Comedy Tegen Kanker",
@@ -56,7 +59,8 @@
 			"Launching the website provided a platform to promote the event and facilitate fundraising, making my contribution a rewarding experience in supporting a significant cause."
 		],
 		"liveUrl": "https://comedy.sinners.be/",
-		"githubUrl": "https://github.com/ahm282/ComedyTegenKanker"
+		"githubUrl": "https://github.com/ahm282/ComedyTegenKanker",
+		"layout": "standard"
 	},
 	"LinuxWebservices": {
 		"projectName": "Linux Web Services",

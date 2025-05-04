@@ -8,6 +8,7 @@ export interface Project {
 	liveUrl?: string;
 	status?: string;
 	content: string[];
+	layout?: 'standard' | 'imageGallery' | 'fullWidth' | 'splitView';
 }
 
 export interface ProjectsData {
