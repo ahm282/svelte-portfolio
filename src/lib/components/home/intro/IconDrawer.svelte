@@ -13,11 +13,11 @@
 		iconName="ri:linkedin-fill"
 		ariaLabel="LinkedIn Profile"
 	/>
-	<IconButton
+	<!-- <IconButton
 		href="https://x.com/ahmedtm282"
 		iconName="ri:twitter-x-fill"
 		ariaLabel="Twitter Profile"
-	/>
+	/> -->
 	<IconButton href="mailto:ahmedhosny282@gmail.com" iconName="ic:round-email" ariaLabel="Email" />
 	<IconButton href="/assets/docs/cv.pdf" iconName="academicons:cv-square" ariaLabel="CV" />
 </div>

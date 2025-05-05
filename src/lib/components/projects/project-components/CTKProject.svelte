@@ -8,7 +8,7 @@
 
 <div class="ctk-project">
 	<!-- Navigation breadcrumb -->
-	<div class="mb-10 flex items-center gap-x-2 text-sm text-muted-foreground">
+	<div class="mb-10 mt-5 flex items-center gap-x-2 text-sm text-muted-foreground">
 		<a href="/" class="hover:text-foreground">Home</a>
 		<Icon icon="lucide:chevron-right" class="size-4" />
 		<a href="/projects" class="hover:text-foreground">Projects</a>
@@ -19,7 +19,7 @@
 	<!-- Project header with charity theme -->
 	<div class="mb-14">
 		<div
-			class="rounded-lg border-2 border-pink-200 bg-gradient-to-br from-pink-50 to-purple-50 p-8 dark:border-pink-900/30 dark:from-pink-950/20 dark:to-purple-950/20"
+			class="rounded-lg border-2 border-pink-200 bg-gradient-to-br from-pink-50 to-purple-50 px-5 py-8 dark:border-pink-900/30 dark:from-pink-950/20 dark:to-purple-950/20"
 		>
 			<div class="flex items-center gap-4">
 				<div
@@ -28,7 +28,7 @@
 					<Icon icon="lucide:heart" class="size-6 text-pink-600 dark:text-pink-400" />
 				</div>
 				<div>
-					<h1 class="font-primary text-3xl font-extrabold leading-tight md:text-4xl">
+					<h1 class="font-primary text-3xl text-[1.6rem] font-extrabold leading-tight md:text-4xl">
 						{project.projectName}
 					</h1>
 					<p class="text-sm text-pink-700 dark:text-pink-400">Charity Fundraiser Event</p>

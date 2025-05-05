@@ -2,6 +2,12 @@
 	import Icon from '@iconify/svelte';
 	import ModeToggle from '$lib/components/ui/modeToggle/ModeToggle.svelte';
 	import IconButton from '$lib/components/ui/iconButton/IconButton.svelte';
+
+	function getCurrentYear() {
+		return new Date().getFullYear();
+	}
+
+	const currentYear = getCurrentYear();
 </script>
 
 <footer class="my-10">
@@ -18,15 +24,17 @@
 			className="!rounded-md !border-input !p-0"
 			ariaLabel="LinkedIn Profile"
 		/>
-		<IconButton
+		<!-- <IconButton
 			href="https://x.com/ahmedtm282"
 			iconName="ri:twitter-x-fill"
 			className="!rounded-md !border-input !p-0"
 			ariaLabel="Twitter Profile"
-		/>
+		/> -->
 		<ModeToggle />
 	</div>
 	<div>
-		<p class="mt-4 text-center text-sm text-muted-foreground">&copy; 2024 Ahmed Mahgoub</p>
+		<p class="mt-4 text-center text-sm text-muted-foreground">
+			&copy; {currentYear} Ahmed Mahgoub - Powered by Svelte
+		</p>
 	</div>
 </footer>

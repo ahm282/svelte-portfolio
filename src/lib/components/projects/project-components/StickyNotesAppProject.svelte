@@ -9,7 +9,7 @@
 
 <div class="sticky-notes-project">
 	<!-- Navigation breadcrumb -->
-	<div class="mb-10 flex items-center gap-x-2 text-sm text-muted-foreground">
+	<div class="mb-10 mt-5 flex items-center gap-x-2 text-sm text-muted-foreground">
 		<a href="/" class="hover:text-foreground">Home</a>
 		<Icon icon="lucide:chevron-right" class="size-4" />
 		<a href="/projects" class="hover:text-foreground">Projects</a>
@@ -73,15 +73,17 @@
 								alt={`${project.projectName} screenshot ${i + 1}`}
 								class="w-full object-cover"
 							/>
-							<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+							<div
+								class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4"
+							>
 								<span class="text-sm font-medium text-white">
 									{i === 0
 										? 'Options Menu'
 										: i === 1
-										? 'Home Screen'
-										: i === 2
-										? 'Create Note'
-										: 'Tags Management'}
+											? 'Home Screen'
+											: i === 2
+												? 'Create Note'
+												: 'Tags Management'}
 								</span>
 							</div>
 						</div>
@@ -96,28 +98,28 @@
 		<h2 class="mb-6 text-xl font-semibold">Key Features</h2>
 		<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
-				<div class="flex items-center gap-2 mb-2">
+				<div class="mb-2 flex items-center gap-2">
 					<Icon icon="lucide:plus-circle" class="size-5 text-emerald-500" />
 					<h3 class="font-medium">Quick Note Creation</h3>
 				</div>
 				<p class="text-sm text-muted-foreground">Create and organize notes with minimal taps</p>
 			</div>
 			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
-				<div class="flex items-center gap-2 mb-2">
+				<div class="mb-2 flex items-center gap-2">
 					<Icon icon="lucide:tag" class="size-5 text-sky-500" />
 					<h3 class="font-medium">Tag Organization</h3>
 				</div>
 				<p class="text-sm text-muted-foreground">Categorize notes with custom tags</p>
 			</div>
 			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
-				<div class="flex items-center gap-2 mb-2">
+				<div class="mb-2 flex items-center gap-2">
 					<Icon icon="lucide:palette" class="size-5 text-amber-500" />
 					<h3 class="font-medium">Custom Colors</h3>
 				</div>
 				<p class="text-sm text-muted-foreground">Visually organize with different note colors</p>
 			</div>
 			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
-				<div class="flex items-center gap-2 mb-2">
+				<div class="mb-2 flex items-center gap-2">
 					<Icon icon="lucide:zap" class="size-5 text-purple-500" />
 					<h3 class="font-medium">Fast Performance</h3>
 				</div>

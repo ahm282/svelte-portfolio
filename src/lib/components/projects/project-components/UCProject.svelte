@@ -9,7 +9,9 @@
 
 <div class="uc-project">
 	<!-- Navigation breadcrumb -->
-	<div class="mb-10 flex items-center gap-x-2 text-sm text-muted-foreground">
+	<div
+		class="mb-10 mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground md:mb-10"
+	>
 		<a href="/" class="hover:text-foreground">Home</a>
 		<Icon icon="lucide:chevron-right" class="size-4" />
 		<a href="/projects" class="hover:text-foreground">Projects</a>
@@ -18,20 +20,22 @@
 	</div>
 
 	<!-- Project header section -->
-	<div class="mb-14 border-b pb-10 dark:border-slate-800">
-		<h1 class="font-primary text-3xl font-extrabold leading-tight md:text-4xl">
+	<div class="mb-10 border-b pb-6 dark:border-slate-800 md:mb-14 md:pb-10">
+		<h1 class="font-primary text-2xl font-extrabold leading-tight sm:text-3xl md:text-4xl">
 			{project.projectName}
 		</h1>
-		<p class="mt-5 text-lg font-light leading-relaxed md:w-4/5">{project.description}</p>
+		<p class="mt-4 text-base font-light leading-relaxed md:mt-5 md:w-4/5 md:text-lg">
+			{project.description}
+		</p>
 
 		<!-- Links section -->
-		<div class="mt-8 flex flex-wrap items-center gap-6">
+		<div class="mt-6 flex flex-wrap items-center gap-3 md:mt-8 md:gap-6">
 			{#if project.githubUrl}
 				<a
 					href={project.githubUrl}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="flex items-center gap-x-2 rounded-full bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+					class="flex items-center gap-x-2 rounded-full bg-zinc-100 px-4 py-2 text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 sm:px-5 sm:py-2.5"
 				>
 					<Icon icon="octicon:mark-github-16" class="size-4" /><span>GitHub Repository</span>
 				</a>
@@ -41,7 +45,7 @@
 					href={project.liveUrl}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="flex items-center gap-x-2 rounded-full bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+					class="flex items-center gap-x-2 rounded-full bg-zinc-100 px-4 py-2 text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 sm:px-5 sm:py-2.5"
 				>
 					<Icon icon="lucide:external-link" class="size-4" /><span>Live Demo</span>
 				</a>
@@ -49,11 +53,11 @@
 		</div>
 
 		<!-- Technologies used -->
-		<div class="mt-10">
-			<h3 class="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+		<div>
+			<h3 class="mb-3 text-sm font-medium uppercase tracking-wider text-muted-foreground md:mb-4">
 				Technologies
 			</h3>
-			<div class="flex flex-wrap gap-2.5">
+			<div class="flex flex-wrap gap-2 md:gap-2.5">
 				{#each project.techStack as tech}
 					<Badge>{tech}</Badge>
 				{/each}
@@ -62,9 +66,11 @@
 	</div>
 
 	<!-- UML methodology visualization -->
-	<div class="mb-14 rounded-lg border p-6 dark:border-slate-800">
-		<h2 class="mb-6 text-xl font-semibold">Requirements Analysis Process</h2>
-		<div class="grid grid-cols-1 gap-5 md:grid-cols-4">
+	<div
+		class="mb-10 rounded-lg border bg-white p-4 dark:border-slate-800 dark:bg-zinc-950 sm:p-6 md:mb-14"
+	>
+		<h2 class="mb-5 text-lg font-semibold sm:text-xl md:mb-6">Requirements Analysis Process</h2>
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:gap-5">
 			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
 				<div class="flex flex-col items-center gap-3 text-center">
 					<div
@@ -122,8 +128,8 @@
 	</div>
 
 	<!-- UML diagram showcase -->
-	<div class="mb-14">
-		<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+	<div class="mb-7">
+		<div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
 			<Card.Root class="border dark:border-slate-800">
 				<Card.CardHeader>
 					<Card.CardTitle>Use Case Diagram</Card.CardTitle>
@@ -194,18 +200,18 @@
 	</div>
 
 	<!-- Images section -->
-	<Card.Root class="mb-14 border dark:border-slate-800">
+	<Card.Root class="mb-10 border dark:border-slate-800 md:mb-14">
 		<Card.CardContent class="p-0">
 			<div
 				id="images"
-				class="scrollbar-thin flex items-center justify-center gap-5 overflow-x-auto p-8"
+				class="scrollbar-thin flex items-center justify-center gap-3 overflow-x-auto p-4 sm:gap-5 sm:p-8"
 			>
 				{#each project.images as image, i}
 					<div class="flex items-center justify-center">
 						<img
 							src={image}
 							alt={`${project.projectName} screenshot ${i + 1}`}
-							class="h-80 rounded-md border object-contain dark:border-slate-700 md:h-96"
+							class="h-64 rounded-md border object-contain dark:border-slate-700 sm:h-80 md:h-96"
 						/>
 					</div>
 				{/each}
@@ -214,25 +220,27 @@
 	</Card.Root>
 
 	<!-- Project description -->
-	<div class="prose prose-zinc dark:prose-invert lg:prose-lg mx-auto mb-16 max-w-none">
+	<div
+		class="prose prose-zinc dark:prose-invert sm:prose-base lg:prose-lg mx-auto mb-12 max-w-none px-0 md:mb-16"
+	>
 		{#each project.content as paragraph}
-			<p class="mb-5 leading-relaxed">{paragraph}</p>
+			<p class="mb-4 leading-relaxed md:mb-5">{paragraph}</p>
 		{/each}
 	</div>
 
 	<!-- Bottom navigation -->
 	<div
-		class="flex flex-wrap items-center justify-between gap-5 border-t pt-10 dark:border-slate-800"
+		class="flex flex-wrap items-center justify-between gap-4 border-t pt-6 dark:border-slate-800 md:gap-5 md:pt-10"
 	>
 		<a
 			href="/projects"
-			class="flex items-center gap-x-2 rounded-lg border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-muted dark:border-slate-800"
+			class="flex items-center gap-x-2 rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted dark:border-slate-800 sm:px-5 sm:py-2.5"
 		>
 			<Icon icon="lucide:arrow-left" class="size-4" />
 			Back to Projects
 		</a>
 
-		<div class="flex items-center gap-x-6">
+		<div class="flex items-center gap-x-4 md:gap-x-6">
 			{#if project.githubUrl}
 				<a
 					href={project.githubUrl}

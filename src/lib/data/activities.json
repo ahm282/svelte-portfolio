@@ -1,4 +1,15 @@
 {
+	"Wordle": {
+		"name": "Wordle",
+		"icon": "lucide:keyboard",
+		"description": "A fun daily word puzzle that challenges my vocabulary and deduction skills.",
+		"subtext": "Six guesses, infinite possibilities... mostly misses.",
+		"content": [
+			"I enjoy the daily challenge of trying to guess the word in as few attempts as possible.",
+			"It's a quick and satisfying way to start the day or take a short break.",
+			"Wordle encourages me to think about word patterns and common letter combinations."
+		]
+	},
 	"chess": {
 		"name": "Chess",
 		"icon": "fluent:chess-20-regular",
@@ -19,6 +30,17 @@
 			"I enjoy working on a variety of projects, from web development to mobile applications.",
 			"Coding allows me to express my creativity and problem-solving skills in a tangible way.",
 			"Building something from scratch and seeing it come to life is incredibly rewarding."
+		]
+	},
+	"sudoku": {
+		"name": "Sudoku",
+		"icon": "lucide:grid",
+		"description": "I enjoy the logical deduction and problem-solving challenge that Sudoku provides.",
+		"subtext": "Just one more number... okay, maybe two rows.",
+		"content": [
+			"Sudoku is a great way to sharpen my focus and improve my concentration.",
+			"I find completing a Sudoku puzzle to be a relaxing yet engaging mental exercise.",
+			"It's a simple concept but can be surprisingly challenging at higher difficulties."
 		]
 	},
 	"SIN": {

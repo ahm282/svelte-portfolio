@@ -9,7 +9,7 @@
 
 <div class="proxmox-project">
 	<!-- Navigation breadcrumb -->
-	<div class="mb-10 flex items-center gap-x-2 text-sm text-muted-foreground">
+	<div class="mb-10 mt-5 flex items-center gap-x-2 text-sm text-muted-foreground">
 		<a href="/" class="hover:text-foreground">Home</a>
 		<Icon icon="lucide:chevron-right" class="size-4" />
 		<a href="/projects" class="hover:text-foreground">Projects</a>
@@ -49,7 +49,7 @@
 		</div>
 
 		<!-- Technologies used -->
-		<div class="mt-10">
+		<div>
 			<h3 class="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground">
 				Technologies
 			</h3>
@@ -67,41 +67,53 @@
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
 			<div class="col-span-1 md:col-span-2">
 				<!-- Server infrastructure diagram -->
-				<div class="rounded-lg border bg-gradient-to-br from-slate-50 to-slate-100 p-5 dark:border-slate-700 dark:from-slate-900 dark:to-slate-800">
+				<div
+					class="rounded-lg border bg-gradient-to-br from-slate-50 to-slate-100 p-5 dark:border-slate-700 dark:from-slate-900 dark:to-slate-800"
+				>
 					<div class="flex flex-col items-center gap-4">
-						<div class="rounded-lg border bg-white p-3 shadow-sm dark:bg-slate-800 dark:border-slate-700">
+						<div
+							class="rounded-lg border bg-white p-3 shadow-sm dark:border-slate-700 dark:bg-slate-800"
+						>
 							<div class="flex items-center gap-2">
 								<Icon icon="lucide:server" class="size-5 text-emerald-500" />
 								<span class="font-medium">Proxmox Hypervisor</span>
 							</div>
 						</div>
-						
+
 						<Icon icon="lucide:arrow-down" class="size-5 text-muted-foreground" />
-						
-						<div class="grid grid-cols-1 gap-4 md:grid-cols-3 w-full">
-							<div class="rounded-lg border bg-white p-3 shadow-sm dark:bg-slate-800 dark:border-slate-700">
+
+						<div class="grid w-full grid-cols-1 gap-4 md:grid-cols-3">
+							<div
+								class="rounded-lg border bg-white p-3 shadow-sm dark:border-slate-700 dark:bg-slate-800"
+							>
 								<div class="flex flex-col items-center gap-1">
 									<Icon icon="lucide:hard-drive" class="size-5 text-blue-500" />
 									<span class="text-sm font-medium">VM: Web Server</span>
 								</div>
 							</div>
-							<div class="rounded-lg border bg-white p-3 shadow-sm dark:bg-slate-800 dark:border-slate-700">
+							<div
+								class="rounded-lg border bg-white p-3 shadow-sm dark:border-slate-700 dark:bg-slate-800"
+							>
 								<div class="flex flex-col items-center gap-1">
 									<Icon icon="lucide:database" class="size-5 text-amber-500" />
 									<span class="text-sm font-medium">VM: Database</span>
 								</div>
 							</div>
-							<div class="rounded-lg border bg-white p-3 shadow-sm dark:bg-slate-800 dark:border-slate-700">
+							<div
+								class="rounded-lg border bg-white p-3 shadow-sm dark:border-slate-700 dark:bg-slate-800"
+							>
 								<div class="flex flex-col items-center gap-1">
 									<Icon icon="lucide:shield" class="size-5 text-red-500" />
 									<span class="text-sm font-medium">VM: Firewall</span>
 								</div>
 							</div>
 						</div>
-						
+
 						<Icon icon="lucide:arrow-down" class="size-5 text-muted-foreground" />
-						
-						<div class="w-full rounded-lg border bg-white p-3 shadow-sm dark:bg-slate-800 dark:border-slate-700">
+
+						<div
+							class="w-full rounded-lg border bg-white p-3 shadow-sm dark:border-slate-700 dark:bg-slate-800"
+						>
 							<div class="flex items-center justify-center gap-2">
 								<Icon icon="lucide:globe" class="size-5 text-purple-500" />
 								<span class="font-medium">Self-Hosted Services</span>
@@ -110,10 +122,10 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="col-span-1">
 				<!-- Self-hosted services list -->
-				<div class="rounded-lg border p-4 h-full dark:border-slate-700">
+				<div class="h-full rounded-lg border p-4 dark:border-slate-700">
 					<h3 class="mb-4 font-medium">Running Services</h3>
 					<ul class="space-y-3">
 						<li class="flex items-center gap-2 text-sm">
@@ -144,14 +156,14 @@
 
 	<!-- Images section -->
 	<Card.Root class="mb-14 border dark:border-slate-800">
-		<Card.CardContent class="p-0">
-			<div id="images" class="scrollbar-thin flex gap-5 overflow-x-auto p-8">
+		<Card.CardContent class="p-2">
+			<div id="images" class="scrollbar-thin flex gap-5 overflow-x-auto lg:p-8">
 				{#each project.images as image, i}
-					<div class="flex justify-center items-center">
+					<div class="flex items-center justify-center">
 						<img
 							src={image}
 							alt={`${project.projectName} screenshot ${i + 1}`}
-							class="h-80 rounded-md border object-contain dark:border-slate-700 md:h-96"
+							class="rounded-md border object-contain dark:border-slate-700"
 						/>
 					</div>
 				{/each}

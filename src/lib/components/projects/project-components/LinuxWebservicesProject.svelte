@@ -9,7 +9,7 @@
 
 <div class="linux-webservices-project">
 	<!-- Navigation breadcrumb -->
-	<div class="mb-10 flex items-center gap-x-2 text-sm text-muted-foreground">
+	<div class="mb-10 mt-5 flex items-center gap-x-2 text-sm text-muted-foreground">
 		<a href="/" class="hover:text-foreground">Home</a>
 		<Icon icon="lucide:chevron-right" class="size-4" />
 		<a href="/projects" class="hover:text-foreground">Projects</a>
@@ -18,7 +18,7 @@
 	</div>
 
 	<!-- Project header section -->
-	<div class="mb-14 border-b pb-10 dark:border-slate-800">
+	<div class="pb-10">
 		<h1 class="font-primary text-3xl font-extrabold leading-tight md:text-4xl">
 			{project.projectName}
 		</h1>
@@ -49,7 +49,7 @@
 		</div>
 
 		<!-- Technologies used -->
-		<div class="mt-10">
+		<div>
 			<h3 class="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground">
 				Technologies
 			</h3>
@@ -62,7 +62,7 @@
 	</div>
 
 	<!-- Custom diagram for Linux Web Services -->
-	<div class="mb-14 rounded-lg border p-6 dark:border-slate-800">
+	<div class="mb-10 rounded-lg border p-6 dark:border-slate-800">
 		<h2 class="mb-6 text-xl font-semibold">Infrastructure Architecture</h2>
 		<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
@@ -90,15 +90,15 @@
 	</div>
 
 	<!-- Images section -->
-	<Card.Root class="mb-14 border dark:border-slate-800">
-		<Card.CardContent class="p-0">
-			<div id="images" class="scrollbar-thin flex gap-5 overflow-x-auto p-8">
+	<Card.Root class="mb-10 border dark:border-slate-800">
+		<Card.CardContent class="p-2">
+			<div id="images" class="scrollbar-thin flex gap-5 overflow-x-auto lg:p-8">
 				{#each project.images as image, i}
-					<div class="relative flex-none">
+					<div class="flex items-center justify-center">
 						<img
 							src={image}
 							alt={`${project.projectName} screenshot ${i + 1}`}
-							class="h-80 rounded-md border object-contain dark:border-slate-700 md:h-96"
+							class="rounded-md border object-contain dark:border-slate-700"
 						/>
 					</div>
 				{/each}
