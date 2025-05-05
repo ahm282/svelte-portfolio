@@ -7,7 +7,7 @@
 	const { project }: { project: Project } = $props();
 </script>
 
-<div class="default-project">
+<div class="linux-webservices-project">
 	<!-- Navigation breadcrumb -->
 	<div class="mb-10 flex items-center gap-x-2 text-sm text-muted-foreground">
 		<a href="/" class="hover:text-foreground">Home</a>
@@ -57,6 +57,34 @@
 				{#each project.techStack as tech}
 					<Badge>{tech}</Badge>
 				{/each}
+			</div>
+		</div>
+	</div>
+
+	<!-- Custom diagram for Linux Web Services -->
+	<div class="mb-14 rounded-lg border p-6 dark:border-slate-800">
+		<h2 class="mb-6 text-xl font-semibold">Infrastructure Architecture</h2>
+		<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
+				<h3 class="mb-2 font-medium">Vagrant VM</h3>
+				<div class="flex items-center gap-2 text-sm text-muted-foreground">
+					<Icon icon="lucide:server" class="size-4" />
+					<span>Kubernetes Control Plane</span>
+				</div>
+			</div>
+			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
+				<h3 class="mb-2 font-medium">Worker Nodes</h3>
+				<div class="flex items-center gap-2 text-sm text-muted-foreground">
+					<Icon icon="lucide:layers" class="size-4" />
+					<span>Docker Containers</span>
+				</div>
+			</div>
+			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
+				<h3 class="mb-2 font-medium">Monitoring</h3>
+				<div class="flex items-center gap-2 text-sm text-muted-foreground">
+					<Icon icon="lucide:activity" class="size-4" />
+					<span>Prometheus & Grafana</span>
+				</div>
 			</div>
 		</div>
 	</div>

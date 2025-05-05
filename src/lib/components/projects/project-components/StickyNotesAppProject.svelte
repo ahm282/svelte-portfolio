@@ -7,7 +7,7 @@
 	const { project }: { project: Project } = $props();
 </script>
 
-<div class="default-project">
+<div class="sticky-notes-project">
 	<!-- Navigation breadcrumb -->
 	<div class="mb-10 flex items-center gap-x-2 text-sm text-muted-foreground">
 		<a href="/" class="hover:text-foreground">Home</a>
@@ -61,22 +61,70 @@
 		</div>
 	</div>
 
-	<!-- Images section -->
-	<Card.Root class="mb-14 border dark:border-slate-800">
-		<Card.CardContent class="p-0">
-			<div id="images" class="scrollbar-thin flex gap-5 overflow-x-auto p-8">
-				{#each project.images as image, i}
-					<div class="relative flex-none">
-						<img
-							src={image}
-							alt={`${project.projectName} screenshot ${i + 1}`}
-							class="h-80 rounded-md border object-contain dark:border-slate-700 md:h-96"
-						/>
-					</div>
-				{/each}
+	<!-- Custom image gallery for Sticky Notes app -->
+	<div class="mb-14">
+		<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+			{#each project.images as image, i}
+				<Card.Root class="overflow-hidden border dark:border-slate-800">
+					<Card.CardContent class="p-0">
+						<div class="relative">
+							<img
+								src={image}
+								alt={`${project.projectName} screenshot ${i + 1}`}
+								class="w-full object-cover"
+							/>
+							<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+								<span class="text-sm font-medium text-white">
+									{i === 0
+										? 'Options Menu'
+										: i === 1
+										? 'Home Screen'
+										: i === 2
+										? 'Create Note'
+										: 'Tags Management'}
+								</span>
+							</div>
+						</div>
+					</Card.CardContent>
+				</Card.Root>
+			{/each}
+		</div>
+	</div>
+
+	<!-- App features section -->
+	<div class="mb-14 rounded-lg border p-6 dark:border-slate-800">
+		<h2 class="mb-6 text-xl font-semibold">Key Features</h2>
+		<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
+				<div class="flex items-center gap-2 mb-2">
+					<Icon icon="lucide:plus-circle" class="size-5 text-emerald-500" />
+					<h3 class="font-medium">Quick Note Creation</h3>
+				</div>
+				<p class="text-sm text-muted-foreground">Create and organize notes with minimal taps</p>
 			</div>
-		</Card.CardContent>
-	</Card.Root>
+			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
+				<div class="flex items-center gap-2 mb-2">
+					<Icon icon="lucide:tag" class="size-5 text-sky-500" />
+					<h3 class="font-medium">Tag Organization</h3>
+				</div>
+				<p class="text-sm text-muted-foreground">Categorize notes with custom tags</p>
+			</div>
+			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
+				<div class="flex items-center gap-2 mb-2">
+					<Icon icon="lucide:palette" class="size-5 text-amber-500" />
+					<h3 class="font-medium">Custom Colors</h3>
+				</div>
+				<p class="text-sm text-muted-foreground">Visually organize with different note colors</p>
+			</div>
+			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
+				<div class="flex items-center gap-2 mb-2">
+					<Icon icon="lucide:zap" class="size-5 text-purple-500" />
+					<h3 class="font-medium">Fast Performance</h3>
+				</div>
+				<p class="text-sm text-muted-foreground">Lightweight app optimized for speed</p>
+			</div>
+		</div>
+	</div>
 
 	<!-- Project description -->
 	<div class="prose prose-zinc dark:prose-invert lg:prose-lg mx-auto mb-16 max-w-none">

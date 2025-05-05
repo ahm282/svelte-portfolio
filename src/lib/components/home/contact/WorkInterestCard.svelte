@@ -1,5 +1,4 @@
 <script lang="ts">
-	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import Button, { buttonVariants } from '$lib/components/ui/button/button.svelte';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import Icon from '@iconify/svelte';

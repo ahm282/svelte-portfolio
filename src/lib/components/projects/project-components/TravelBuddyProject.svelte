@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import Badge from '$lib/components/projects/Badge.svelte';
-	import { Button, buttonVariants } from '$lib/components/ui/button/index.js';
 	import type { Project } from '$lib/types/project';
 
 	const { project }: { project: Project } = $props();
@@ -108,15 +107,15 @@
 
 					<!-- Power button -->
 					<div
-						class="absolute -right-8 top-28 h-16 w-2 rounded-r-lg bg-zinc-800 dark:bg-zinc-600"
+						class="absolute -right-4 top-28 h-16 w-2 rounded-r-lg bg-zinc-800 dark:bg-zinc-600"
 					></div>
 
 					<!-- Volume buttons -->
 					<div
-						class="absolute -left-8 top-20 h-12 w-2 rounded-l-lg bg-zinc-800 dark:bg-zinc-600"
+						class="absolute -left-4 top-20 h-12 w-2 rounded-l-lg bg-zinc-800 dark:bg-zinc-600"
 					></div>
 					<div
-						class="absolute -left-8 top-40 h-12 w-2 rounded-l-lg bg-zinc-800 dark:bg-zinc-600"
+						class="absolute -left-4 top-40 h-12 w-2 rounded-l-lg bg-zinc-800 dark:bg-zinc-600"
 					></div>
 
 					<!-- Screen content -->

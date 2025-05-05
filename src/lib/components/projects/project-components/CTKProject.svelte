@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import Badge from '$lib/components/projects/Badge.svelte';
-	import { Button, buttonVariants } from '$lib/components/ui/button/index.js';
 	import type { Project } from '$lib/types/project';
 
 	const { project }: { project: Project } = $props();

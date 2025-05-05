@@ -18,7 +18,9 @@
 	class="-z-50 [mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]"
 />
 <ModeWatcher />
-<div class={'mx-auto w-11/12 text-left md:w-9/12 lg:w-8/12 xl:w-7/12 2xl:w-6/12'}>
+<div
+	class={'mx-auto w-11/12 pt-4 text-left md:w-9/12 md:pt-8 lg:w-8/12 lg:pt-10 xl:w-7/12 2xl:w-6/12'}
+>
 	{@render children?.()}
 </div>
 <Footer />

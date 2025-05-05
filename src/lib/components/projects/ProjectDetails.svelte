@@ -40,7 +40,7 @@
 				<Dialog.Title>{project.projectName}</Dialog.Title>
 				<Dialog.Description>{project.description}</Dialog.Description>
 			</Dialog.Header>
-			<div class="flex items-center gap-x-6">
+			<div class="mt-6 flex items-center gap-x-6">
 				{#if project.githubUrl}
 					<a
 						href={project.githubUrl}
@@ -63,7 +63,7 @@
 					>
 				{/if}
 			</div>
-			<div class="flex flex-wrap gap-x-2">
+			<div class="mt-4 flex flex-wrap gap-x-2">
 				<h3>Technologies used:</h3>
 				<div class="flex gap-x-1">{@render renderTechStack(project.techStack)}</div>
 			</div>
@@ -72,7 +72,7 @@
 			{#if layout === 'standard'}
 				<div
 					id="images"
-					class="my-4 flex w-full gap-4 overflow-x-auto rounded border border-slate-300 p-4 dark:border-slate-800"
+					class="my-4 flex w-full justify-center gap-4 overflow-x-auto rounded border border-slate-300 p-4 dark:border-slate-800"
 				>
 					{#each project.images as image}
 						<img
@@ -100,27 +100,28 @@
 									index === activeImageIndex ? 'bg-primary' : 'bg-gray-300 dark:bg-gray-700'
 								}`}
 								aria-label={`Image ${index + 1}`}
-							/>
+							>
+							</button>
 						{/each}
 					</div>
 				</div>
 				{@render renderProjectContent(project.content)}
 			{:else if layout === 'fullWidth'}
-				<div class="my-4 w-full">
+				<div class="my-4 flex w-full justify-center">
 					<img
 						src={project.images[0]}
 						alt={project.projectName}
-						class="w-full rounded-md object-cover"
+						class="w-full rounded-md object-contain"
 					/>
 				</div>
 				{@render renderProjectContent(project.content)}
 			{:else if layout === 'splitView'}
 				<div class="my-4 flex flex-row gap-4">
-					<div class="w-1/2">
+					<div class="flex w-1/2 items-center justify-center">
 						<img
 							src={project.images[0]}
 							alt={project.projectName}
-							class="h-full w-full rounded-md object-cover"
+							class="h-full w-full rounded-md object-contain"
 						/>
 					</div>
 					<div class="w-1/2">
@@ -189,7 +190,7 @@
 			{#if layout === 'standard' || layout === 'fullWidth'}
 				<div class="flex flex-col items-center justify-center">
 					<div class="my-4 px-4">
-						<div class="flex gap-4 overflow-x-auto">
+						<div class="flex justify-center gap-4 overflow-x-auto">
 							{#each project.images as image}
 								<img
 									src={image}
@@ -205,12 +206,14 @@
 				</div>
 			{:else if layout === 'imageGallery'}
 				<div class="flex flex-col items-center justify-center">
-					<div class="my-4 px-4">
-						<img
-							src={project.images[activeImageIndex]}
-							alt={project.projectName}
-							class="h-56 rounded-md object-contain"
-						/>
+					<div class="my-4 w-full px-4">
+						<div class="flex items-center justify-center">
+							<img
+								src={project.images[activeImageIndex]}
+								alt={project.projectName}
+								class="h-56 rounded-md object-contain"
+							/>
+						</div>
 						<div class="mt-2 flex justify-center gap-2">
 							{#each project.images as _, index}
 								<button
@@ -219,7 +222,8 @@
 										index === activeImageIndex ? 'bg-primary' : 'bg-gray-300 dark:bg-gray-700'
 									}`}
 									aria-label={`Image ${index + 1}`}
-								/>
+								>
+								</button>
 							{/each}
 						</div>
 					</div>
@@ -236,7 +240,7 @@
 								<Tabs.TabsTrigger value="description" class="w-6/12">Description</Tabs.TabsTrigger>
 							</Tabs.TabsList>
 							<div class="my-1 rounded">
-								<Tabs.TabsContent value="image" class="rounded-lg">
+								<Tabs.TabsContent value="image" class="flex justify-center rounded-lg">
 									<img
 										src={project.images[0]}
 										alt={project.projectName}

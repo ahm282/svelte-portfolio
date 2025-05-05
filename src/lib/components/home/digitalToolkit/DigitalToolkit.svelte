@@ -20,7 +20,7 @@
 	];
 </script>
 
-{#snippet icon(iconName: any)}
+{#snippet icon(iconName: string)}
 	<Icon icon={iconName} class="size-10" />
 {/snippet}
 

@@ -1,0 +1,260 @@
+<script lang="ts">
+	import Badge from '$lib/components/projects/Badge.svelte';
+	import * as Card from '$lib/components/ui/card/index.js';
+	import type { Project } from '$lib/types/project';
+	import Icon from '@iconify/svelte';
+
+	const { project }: { project: Project } = $props();
+</script>
+
+<div class="uc-project">
+	<!-- Navigation breadcrumb -->
+	<div class="mb-10 flex items-center gap-x-2 text-sm text-muted-foreground">
+		<a href="/" class="hover:text-foreground">Home</a>
+		<Icon icon="lucide:chevron-right" class="size-4" />
+		<a href="/projects" class="hover:text-foreground">Projects</a>
+		<Icon icon="lucide:chevron-right" class="size-4" />
+		<span class="text-foreground">{project.projectName}</span>
+	</div>
+
+	<!-- Project header section -->
+	<div class="mb-14 border-b pb-10 dark:border-slate-800">
+		<h1 class="font-primary text-3xl font-extrabold leading-tight md:text-4xl">
+			{project.projectName}
+		</h1>
+		<p class="mt-5 text-lg font-light leading-relaxed md:w-4/5">{project.description}</p>
+
+		<!-- Links section -->
+		<div class="mt-8 flex flex-wrap items-center gap-6">
+			{#if project.githubUrl}
+				<a
+					href={project.githubUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex items-center gap-x-2 rounded-full bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+				>
+					<Icon icon="octicon:mark-github-16" class="size-4" /><span>GitHub Repository</span>
+				</a>
+			{/if}
+			{#if project.liveUrl}
+				<a
+					href={project.liveUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex items-center gap-x-2 rounded-full bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+				>
+					<Icon icon="lucide:external-link" class="size-4" /><span>Live Demo</span>
+				</a>
+			{/if}
+		</div>
+
+		<!-- Technologies used -->
+		<div class="mt-10">
+			<h3 class="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+				Technologies
+			</h3>
+			<div class="flex flex-wrap gap-2.5">
+				{#each project.techStack as tech}
+					<Badge>{tech}</Badge>
+				{/each}
+			</div>
+		</div>
+	</div>
+
+	<!-- UML methodology visualization -->
+	<div class="mb-14 rounded-lg border p-6 dark:border-slate-800">
+		<h2 class="mb-6 text-xl font-semibold">Requirements Analysis Process</h2>
+		<div class="grid grid-cols-1 gap-5 md:grid-cols-4">
+			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
+				<div class="flex flex-col items-center gap-3 text-center">
+					<div
+						class="flex size-12 items-center justify-center rounded-full bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400"
+					>
+						<Icon icon="lucide:users" class="size-6" />
+					</div>
+					<h3 class="font-medium">Stakeholder Interviews</h3>
+					<p class="text-sm text-muted-foreground">
+						Gathering requirements from club members and management
+					</p>
+				</div>
+			</div>
+
+			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
+				<div class="flex flex-col items-center gap-3 text-center">
+					<div
+						class="flex size-12 items-center justify-center rounded-full bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400"
+					>
+						<Icon icon="lucide:file-text" class="size-6" />
+					</div>
+					<h3 class="font-medium">Requirements Documentation</h3>
+					<p class="text-sm text-muted-foreground">
+						Transforming needs into functional requirements
+					</p>
+				</div>
+			</div>
+
+			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
+				<div class="flex flex-col items-center gap-3 text-center">
+					<div
+						class="flex size-12 items-center justify-center rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
+					>
+						<Icon icon="lucide:layout" class="size-6" />
+					</div>
+					<h3 class="font-medium">UML Modeling</h3>
+					<p class="text-sm text-muted-foreground">Creating use case and class diagrams</p>
+				</div>
+			</div>
+
+			<div class="rounded-lg border bg-muted/30 p-4 dark:border-slate-700">
+				<div class="flex flex-col items-center gap-3 text-center">
+					<div
+						class="flex size-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
+					>
+						<Icon icon="lucide:monitor" class="size-6" />
+					</div>
+					<h3 class="font-medium">Wireframe Design</h3>
+					<p class="text-sm text-muted-foreground">
+						Prototyping the user interface with stakeholder feedback
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- UML diagram showcase -->
+	<div class="mb-14">
+		<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+			<Card.Root class="border dark:border-slate-800">
+				<Card.CardHeader>
+					<Card.CardTitle>Use Case Diagram</Card.CardTitle>
+					<Card.CardDescription>Modeling user interactions with the system</Card.CardDescription>
+				</Card.CardHeader>
+				<Card.CardContent>
+					<div class="rounded-md border bg-muted/30 p-4 dark:border-slate-700">
+						<div class="flex flex-col gap-4">
+							<div class="flex items-center gap-2">
+								<Icon icon="lucide:user" class="size-5 text-blue-500" />
+								<span class="font-medium">Actors</span>
+							</div>
+							<ul class="ml-6 space-y-2 text-sm">
+								<li class="list-disc">Club Member</li>
+								<li class="list-disc">Club Admin</li>
+								<li class="list-disc">Event Organizer</li>
+							</ul>
+
+							<div class="flex items-center gap-2">
+								<Icon icon="lucide:clipboard-list" class="size-5 text-emerald-500" />
+								<span class="font-medium">Key Use Cases</span>
+							</div>
+							<ul class="ml-6 space-y-2 text-sm">
+								<li class="list-disc">Register for Membership</li>
+								<li class="list-disc">Manage Events</li>
+								<li class="list-disc">View Calendar</li>
+								<li class="list-disc">Send Notifications</li>
+							</ul>
+						</div>
+					</div>
+				</Card.CardContent>
+			</Card.Root>
+
+			<Card.Root class="border dark:border-slate-800">
+				<Card.CardHeader>
+					<Card.CardTitle>Class Diagram</Card.CardTitle>
+					<Card.CardDescription>Defining system structure and relationships</Card.CardDescription>
+				</Card.CardHeader>
+				<Card.CardContent>
+					<div class="rounded-md border bg-muted/30 p-4 dark:border-slate-700">
+						<div class="flex flex-col gap-4">
+							<div class="flex items-center gap-2">
+								<Icon icon="lucide:package" class="size-5 text-amber-500" />
+								<span class="font-medium">Core Classes</span>
+							</div>
+							<ul class="ml-6 space-y-2 text-sm">
+								<li class="list-disc">User</li>
+								<li class="list-disc">Member</li>
+								<li class="list-disc">Event</li>
+								<li class="list-disc">Calendar</li>
+								<li class="list-disc">Notification</li>
+							</ul>
+
+							<div class="flex items-center gap-2">
+								<Icon icon="lucide:git-merge" class="size-5 text-purple-500" />
+								<span class="font-medium">Relationships</span>
+							</div>
+							<ul class="ml-6 space-y-2 text-sm">
+								<li class="list-disc">Inheritance: User → Member</li>
+								<li class="list-disc">Composition: Calendar → Events</li>
+								<li class="list-disc">Association: Member ↔ Event</li>
+							</ul>
+						</div>
+					</div>
+				</Card.CardContent>
+			</Card.Root>
+		</div>
+	</div>
+
+	<!-- Images section -->
+	<Card.Root class="mb-14 border dark:border-slate-800">
+		<Card.CardContent class="p-0">
+			<div
+				id="images"
+				class="scrollbar-thin flex items-center justify-center gap-5 overflow-x-auto p-8"
+			>
+				{#each project.images as image, i}
+					<div class="flex items-center justify-center">
+						<img
+							src={image}
+							alt={`${project.projectName} screenshot ${i + 1}`}
+							class="h-80 rounded-md border object-contain dark:border-slate-700 md:h-96"
+						/>
+					</div>
+				{/each}
+			</div>
+		</Card.CardContent>
+	</Card.Root>
+
+	<!-- Project description -->
+	<div class="prose prose-zinc dark:prose-invert lg:prose-lg mx-auto mb-16 max-w-none">
+		{#each project.content as paragraph}
+			<p class="mb-5 leading-relaxed">{paragraph}</p>
+		{/each}
+	</div>
+
+	<!-- Bottom navigation -->
+	<div
+		class="flex flex-wrap items-center justify-between gap-5 border-t pt-10 dark:border-slate-800"
+	>
+		<a
+			href="/projects"
+			class="flex items-center gap-x-2 rounded-lg border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-muted dark:border-slate-800"
+		>
+			<Icon icon="lucide:arrow-left" class="size-4" />
+			Back to Projects
+		</a>
+
+		<div class="flex items-center gap-x-6">
+			{#if project.githubUrl}
+				<a
+					href={project.githubUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-sm text-muted-foreground hover:text-foreground"
+				>
+					<Icon icon="octicon:mark-github-16" class="mr-1 inline size-4" />
+					View Source
+				</a>
+			{/if}
+			{#if project.liveUrl}
+				<a
+					href={project.liveUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-sm text-muted-foreground hover:text-foreground"
+				>
+					<Icon icon="lucide:external-link" class="mr-1 inline size-4" />
+					Visit Project
+				</a>
+			{/if}
+		</div>
+	</div>
+</div>
