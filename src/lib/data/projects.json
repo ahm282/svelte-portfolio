@@ -38,7 +38,7 @@
 		"description": "A website for the WTC-Roland cycling club, to manage events and memberships.",
 		"techStack": ["Laravel", "Livewire", "Tailwind", "Alpine.js"],
 		"images": ["/assets/projects/WTCHome.webp"],
-		"featured": true,
+		"featured": false,
 		"content": [
 			"The WTC-Roland Club website is a Laravel-based web application that provides a platform for managing club events and memberships. It features a user-friendly interface that allows club management to create and manage events, track memberships, and communicate with members through emails.",
 			"The website is built using Laravel, Livewire, Tailwind CSS, and Alpine.js. It includes a custom admin panel for managing events, memberships, and user accounts. The admin panel provides tools for creating new events, sending notifications to members, and editing email templates.",
@@ -46,6 +46,26 @@
 			"The website has been well received by the teachers at our school. It has been a great learning experience that has helped me improve my skills in web development and dealing with real-world requirements."
 		],
 		"layout": "splitView"
+	},
+	"Kanban Board": {
+		"projectName": "Kanban Board",
+		"description": "A simple Kanban board app built with NextJS and Express.",
+		"techStack": ["NextJS", "Express", "MongoDB", "Tailwind", "Socket.io", "TypeScript"],
+		"images": [
+			"/assets/projects/kanban-board/home.webp",
+			"/assets/projects/kanban-board/create-task.webp",
+			"/assets/projects/kanban-board/login-dark.webp",
+			"/assets/projects/kanban-board/register-light.webp"
+		],
+		"featured": true,
+		"content": [
+			"Taskflow is a simple web application that allows users to create and manage tasks using the Kanban methodology. It is built using NextJS, Express, MongoDB, and Socket.io.",
+			"The app features a clean, intuitive and accessible interface that allows users to easily create, edit, and delete tasks.",
+			"I worked on this project as part of a team of three developers at Häme University of Applied Sciences in Finland. My role was to design and implement parts of the front end and integrate the Socket.io functionality for real-time updates. I also contributed to the back end development and testing.",
+			"The project was a great learning experience that helped me improve my skills in web development, real-time applications with Socket.io, and Feature-Sliced Architecture with NextJS."
+		],
+		"githubUrl": "https://github.com/KostasV1l/kanban-board-clone/",
+		"layout": "imageGallery"
 	},
 	"CTK": {
 		"projectName": "Comedy Tegen Kanker",

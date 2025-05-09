@@ -11,6 +11,7 @@
 	import StickyNotesAppProject from '$lib/components/projects/project-components/StickyNotesAppProject.svelte';
 	import ProxmoxProject from '$lib/components/projects/project-components/ProxmoxProject.svelte';
 	import UCProject from '$lib/components/projects/project-components/UCProject.svelte';
+	import KanbanBoardProject from '$lib/components/projects/project-components/KanbanBoardProject.svelte';
 	import DefaultProject from '$lib/components/projects/project-components/DefaultProject.svelte';
 
 	// Get the project data from the page
@@ -45,6 +46,9 @@
 			break;
 		case 'requirements-analysis':
 			ProjectComponent = UCProject;
+			break;
+		case 'kanban-board':
+			ProjectComponent = KanbanBoardProject;
 			break;
 		default:
 			ProjectComponent = DefaultProject;
