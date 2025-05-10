@@ -85,8 +85,7 @@
 		<Carousel
 			images={project.images}
 			imageAltPrefix="Kanban Board screenshot"
-			autoplay={true}
-			interval={5000}
+			autoplay={false}
 			showThumbnails={true}
 		/>
 	</div>

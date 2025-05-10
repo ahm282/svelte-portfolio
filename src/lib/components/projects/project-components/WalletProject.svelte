@@ -1,21 +1,10 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import Badge from '$lib/components/projects/Badge.svelte';
+	import { Carousel } from '$lib/components/ui/carousel';
 	import type { Project } from '$lib/types/project';
 
 	const { project }: { project: Project } = $props();
-
-	// For image gallery
-	let activeImageIndex = $state(0);
-
-	// Handle image navigation
-	const nextImage = () => {
-		activeImageIndex = (activeImageIndex + 1) % project.images.length;
-	};
-
-	const prevImage = () => {
-		activeImageIndex = (activeImageIndex - 1 + project.images.length) % project.images.length;
-	};
 </script>
 
 <div class="wallet-project">
@@ -64,117 +53,87 @@
 		</div>
 	</div>
 
-	<!-- Image Gallery - Specific Layout for Wallet -->
-	<div
-		class="mb-10 rounded-lg border bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 sm:p-8 md:mb-14"
-	>
-		<div class="relative">
-			<!-- Main image display -->
-			<div class="flex items-center justify-center">
-				<img
-					src={project.images[activeImageIndex]}
-					alt={`${project.projectName} screenshot ${activeImageIndex + 1}`}
-					class="max-h-[350px] rounded-md object-contain md:max-h-[550px]"
-				/>
-			</div>
+	<!-- Image Carousel with Thumbnails -->
+	<div class="mb-12 md:mb-16">
+		<h2 class="mb-6 text-xl font-semibold sm:text-2xl">Project Screenshots</h2>
 
-			<!-- Navigation arrows -->
-			{#if project.images.length > 1}
-				<button
-					onclick={prevImage}
-					class="absolute left-2 top-1/2 -translate-y-1/2 transform rounded-full bg-white/90 p-1.5 text-zinc-800 shadow-md hover:bg-white focus:outline-none dark:bg-zinc-800/90 dark:text-white dark:hover:bg-zinc-800 sm:left-4 sm:p-2.5"
-					aria-label="Previous image"
-				>
-					<Icon icon="lucide:chevron-left" class="size-4 sm:size-5" />
-				</button>
-				<button
-					onclick={nextImage}
-					class="absolute right-2 top-1/2 -translate-y-1/2 transform rounded-full bg-white/90 p-1.5 text-zinc-800 shadow-md hover:bg-white focus:outline-none dark:bg-zinc-800/90 dark:text-white dark:hover:bg-zinc-800 sm:right-4 sm:p-2.5"
-					aria-label="Next image"
-				>
-					<Icon icon="lucide:chevron-right" class="size-4 sm:size-5" />
-				</button>
-			{/if}
-
-			<!-- Indicator dots -->
-			{#if project.images.length > 1}
-				<div class="mt-3 flex justify-center gap-2 sm:gap-3 md:mt-8">
-					{#each project.images as _, index}
-						<button
-							onclick={() => (activeImageIndex = index)}
-							class={`size-2.5 rounded-full transition-all sm:size-3 ${
-								index === activeImageIndex
-									? 'scale-110 bg-primary'
-									: 'bg-zinc-300 hover:bg-zinc-400 dark:bg-zinc-700 dark:hover:bg-zinc-600'
-							}`}
-							aria-label={`Image ${index + 1}`}
-						></button>
-					{/each}
-				</div>
-			{/if}
-		</div>
+		<Carousel
+			images={project.images}
+			imageAltPrefix="Wallet screenshot"
+			autoplay={false}
+			showThumbnails={true}
+		/>
 	</div>
 
-	<!-- Project-specific content with unique styling -->
-	<div class="mb-12 grid grid-cols-1 gap-8 md:mb-16 md:gap-12 lg:grid-cols-12">
-		<div class="lg:col-span-8">
-			<div class="prose prose-zinc dark:prose-invert sm:prose-base md:prose-lg max-w-none">
-				<h2 class="font-primary font-bold text-3xl mb-5">Personal Finance Management</h2>
+	<!-- Project content -->
+	<div
+		class="prose prose-zinc dark:prose-invert sm:prose-base md:prose-lg mb-12 max-w-none md:mb-16"
+	>
+		{#each project.content as paragraph}
+			<p class="mb-4 leading-relaxed md:mb-5">{paragraph}</p>
+		{/each}
+	</div>
 
-				{#each project.content as paragraph, i}
-					{#if i === project.content.length - 1}
-						<p class="leading-relaxed">{paragraph}</p>
-					{:else}
-						<p class="mb-4 leading-relaxed md:mb-5">{paragraph}</p>
-					{/if}
-				{/each}
+	<!-- Architecture Features Section -->
+	<div class="mb-12 md:mb-16">
+		<h2 class="mb-6 text-xl font-semibold sm:text-2xl">Architecture Features</h2>
+		<div class="grid gap-6 md:grid-cols-2">
+			<div class="rounded-lg border bg-card p-6 dark:border-slate-800">
+				<div class="flex items-center gap-4">
+					<div
+						class="flex size-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30"
+					>
+						<Icon icon="lucide:layout-dashboard" class="size-5 text-blue-600 dark:text-blue-400" />
+					</div>
+					<h3 class="text-lg font-medium">Microservices Architecture</h3>
+				</div>
+				<p class="mt-3 text-muted-foreground">
+					Built with scalable, independently deployable microservices for flexibility and resilience
+				</p>
 			</div>
-		</div>
 
-		<div class="lg:col-span-4">
-			<div
-				class="rounded-lg border bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 sm:p-7"
-			>
-				<h3 class="mb-4 font-primary text-base font-semibold sm:text-lg md:mb-5">
-					Architecture Features
-				</h3>
-				<ul class="space-y-3 md:space-y-4">
-					<li class="flex items-start gap-2 sm:gap-3">
-						<Icon
-							icon="lucide:check-circle"
-							class="mt-1 size-4 flex-shrink-0 text-green-500 sm:size-5"
-						/>
-						<span>Microservices architecture</span>
-					</li>
-					<li class="flex items-start gap-2 sm:gap-3">
-						<Icon
-							icon="lucide:check-circle"
-							class="mt-1 size-4 flex-shrink-0 text-green-500 sm:size-5"
-						/>
-						<span>Multiple database technologies</span>
-					</li>
-					<li class="flex items-start gap-2 sm:gap-3">
-						<Icon
-							icon="lucide:check-circle"
-							class="mt-1 size-4 flex-shrink-0 text-green-500 sm:size-5"
-						/>
-						<span>React-based frontend</span>
-					</li>
-					<li class="flex items-start gap-2 sm:gap-3">
-						<Icon
-							icon="lucide:check-circle"
-							class="mt-1 size-4 flex-shrink-0 text-green-500 sm:size-5"
-						/>
-						<span>CI/CD pipeline</span>
-					</li>
-					<li class="flex items-start gap-2 sm:gap-3">
-						<Icon
-							icon="lucide:check-circle"
-							class="mt-1 size-4 flex-shrink-0 text-green-500 sm:size-5"
-						/>
-						<span>Chaos Engineering testing</span>
-					</li>
-				</ul>
+			<div class="rounded-lg border bg-card p-6 dark:border-slate-800">
+				<div class="flex items-center gap-4">
+					<div
+						class="flex size-10 flex-shrink-0 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30"
+					>
+						<Icon icon="lucide:database" class="size-5 text-green-600 dark:text-green-400" />
+					</div>
+					<h3 class="text-lg font-medium">Multi-Database Strategy</h3>
+				</div>
+				<p class="mt-3 text-muted-foreground">
+					Leverages different database technologies optimized for specific services' data
+					requirements
+				</p>
+			</div>
+
+			<div class="rounded-lg border bg-card p-6 dark:border-slate-800">
+				<div class="flex items-center gap-4">
+					<div
+						class="flex size-10 flex-shrink-0 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900/30"
+					>
+						<Icon icon="logos:react" class="size-5" />
+					</div>
+					<h3 class="text-lg font-medium">React-Based Frontend</h3>
+				</div>
+				<p class="mt-3 text-muted-foreground">
+					Responsive and interactive user interface built with React and modern frontend
+					technologies
+				</p>
+			</div>
+
+			<div class="rounded-lg border bg-card p-6 dark:border-slate-800">
+				<div class="flex items-center gap-4">
+					<div
+						class="flex size-10 flex-shrink-0 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/30"
+					>
+						<Icon icon="lucide:git-branch" class="size-5 text-amber-600 dark:text-amber-400" />
+					</div>
+					<h3 class="text-lg font-medium">CI/CD Pipeline</h3>
+				</div>
+				<p class="mt-3 text-muted-foreground">
+					Automated testing and deployment workflows for reliable and consistent releases
+				</p>
 			</div>
 		</div>
 	</div>

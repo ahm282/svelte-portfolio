@@ -60,7 +60,7 @@
 
 			<!-- Navigation buttons -->
 			<button
-				class="absolute left-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:bg-white/10 dark:hover:bg-white/20"
+				class="absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:bg-white/10 dark:hover:bg-white/20 md:h-10 md:w-10"
 				onclick={(e) => {
 					e.stopPropagation();
 					prevImage();
@@ -70,7 +70,7 @@
 				<Icon icon="lucide:chevron-left" class="size-5" />
 			</button>
 			<button
-				class="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:bg-white/10 dark:hover:bg-white/20"
+				class="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:bg-white/10 dark:hover:bg-white/20 md:h-10 md:w-10"
 				onclick={(e) => {
 					e.stopPropagation();
 					nextImage();
@@ -91,24 +91,29 @@
 
 	<!-- Thumbnails -->
 	{#if showThumbnails && images.length > 1}
-		<div class="grid grid-cols-4 gap-2">
-			{#each images as image, i}
-				<button
-					class="overflow-hidden rounded-lg border {i === currentImageIndex
-						? 'ring-2 ring-primary ring-offset-2'
-						: ''} dark:border-slate-800"
-					onclick={() => {
-						currentImageIndex = i;
-					}}
-					aria-label={`View ${imageAltPrefix.toLowerCase()} ${i + 1}`}
-				>
-					<img
-						src={image}
-						alt={`${imageAltPrefix} thumbnail ${i + 1}`}
-						class="aspect-video h-full w-full object-cover"
-					/>
-				</button>
-			{/each}
+		<div class="w-full overflow-hidden">
+			<div
+				class="scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 mx-1 flex gap-2 overflow-x-auto p-2 md:gap-3 md:pb-4"
+			>
+				{#each images as image, i}
+					<button
+						class="aspect-video w-1/4 flex-none snap-start overflow-hidden rounded-lg border {i ===
+						currentImageIndex
+							? 'ring-1 ring-primary ring-offset-1'
+							: ''} dark:border-slate-800"
+						onclick={() => {
+							currentImageIndex = i;
+						}}
+						aria-label={`View ${imageAltPrefix.toLowerCase()} ${i + 1}`}
+					>
+						<img
+							src={image}
+							alt={`${imageAltPrefix} thumbnail ${i + 1}`}
+							class="h-full w-full object-cover"
+						/>
+					</button>
+				{/each}
+			</div>
 		</div>
 	{/if}
 </div>
