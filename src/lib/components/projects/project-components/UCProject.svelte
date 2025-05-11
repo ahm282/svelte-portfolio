@@ -3,21 +3,20 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import type { Project } from '$lib/types/project';
 	import Icon from '@iconify/svelte';
+	import { Breadcrumb } from '$lib/components/ui/breadcrumb';
 
 	const { project }: { project: Project } = $props();
 </script>
 
 <div class="uc-project">
 	<!-- Navigation breadcrumb -->
-	<div
-		class="mb-10 mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground md:mb-10"
-	>
-		<a href="/" class="hover:text-foreground">Home</a>
-		<Icon icon="lucide:chevron-right" class="size-4" />
-		<a href="/projects" class="hover:text-foreground">Projects</a>
-		<Icon icon="lucide:chevron-right" class="size-4" />
-		<span class="text-foreground">{project.projectName}</span>
-	</div>
+	<Breadcrumb
+		items={[
+			{ href: '/', label: 'Home' },
+			{ href: '/projects', label: 'Projects' }
+		]}
+		currentPage={project.projectName}
+	/>
 
 	<!-- Project header section -->
 	<div class="mb-10 border-b pb-6 dark:border-slate-800 md:mb-14 md:pb-10">

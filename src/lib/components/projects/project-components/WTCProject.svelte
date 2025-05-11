@@ -2,19 +2,20 @@
 	import Icon from '@iconify/svelte';
 	import Badge from '$lib/components/projects/Badge.svelte';
 	import type { Project } from '$lib/types/project';
+	import { Breadcrumb } from '$lib/components/ui/breadcrumb';
 
 	const { project }: { project: Project } = $props();
 </script>
 
 <div class="wtc-project">
 	<!-- Navigation breadcrumb -->
-	<div class="mb-10 mt-5 flex items-center gap-x-2 text-sm text-muted-foreground">
-		<a href="/" class="hover:text-foreground">Home</a>
-		<Icon icon="lucide:chevron-right" class="size-4" />
-		<a href="/projects" class="hover:text-foreground">Projects</a>
-		<Icon icon="lucide:chevron-right" class="size-4" />
-		<span class="text-foreground">{project.projectName}</span>
-	</div>
+	<Breadcrumb
+		items={[
+			{ href: '/', label: 'Home' },
+			{ href: '/projects', label: 'Projects' }
+		]}
+		currentPage={project.projectName}
+	/>
 
 	<!-- Project header section -->
 	<div class="mb-14 border-b pb-10 dark:border-slate-800 md:mb-14 md:pb-10">

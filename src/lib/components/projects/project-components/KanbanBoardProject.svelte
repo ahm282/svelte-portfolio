@@ -3,19 +3,20 @@
 	import Badge from '$lib/components/projects/Badge.svelte';
 	import { Carousel } from '$lib/components/ui/carousel';
 	import type { Project } from '$lib/types/project';
+	import { Breadcrumb } from '$lib/components/ui/breadcrumb';
 
 	const { project }: { project: Project } = $props();
 </script>
 
 <div class="kanban-board-project">
 	<!-- Navigation breadcrumb -->
-	<div class="mb-10 mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
-		<a href="/" class="hover:text-foreground">Home</a>
-		<Icon icon="lucide:chevron-right" class="size-4" />
-		<a href="/projects" class="hover:text-foreground">Projects</a>
-		<Icon icon="lucide:chevron-right" class="size-4" />
-		<span class="text-foreground">{project.projectName}</span>
-	</div>
+	<Breadcrumb
+		items={[
+			{ href: '/', label: 'Home' },
+			{ href: '/projects', label: 'Projects' }
+		]}
+		currentPage={project.projectName}
+	/>
 
 	<!-- Hero section with full-width image -->
 	<div class="relative overflow-hidden rounded-xl">
