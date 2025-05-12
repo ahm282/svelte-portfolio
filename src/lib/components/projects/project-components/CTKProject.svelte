@@ -44,7 +44,7 @@
 						href={project.liveUrl}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="flex items-center gap-x-2 rounded-full bg-pink-600 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-pink-700 dark:bg-pink-700 dark:hover:bg-pink-600"
+						class="flex items-center gap-x-2 rounded-full border bg-pink-600 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-pink-700 dark:bg-pink-700 dark:hover:bg-pink-600"
 					>
 						<Icon icon="lucide:external-link" class="size-4" />
 						<span>Visit Event Website</span>
@@ -56,7 +56,7 @@
 						href={project.githubUrl}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="flex items-center gap-x-2 rounded-full bg-white px-6 py-2.5 text-sm font-medium text-pink-700 shadow-sm transition-colors hover:bg-pink-50 dark:bg-zinc-800 dark:text-pink-400 dark:hover:bg-zinc-700"
+						class="flex items-center gap-x-2 rounded-full border bg-white px-6 py-2.5 text-sm font-medium text-pink-700 shadow-sm transition-colors hover:bg-pink-50 dark:bg-zinc-800 dark:text-pink-400 dark:hover:bg-zinc-700"
 					>
 						<Icon icon="octicon:mark-github-16" class="size-4" />
 						<span>Source Code</span>

@@ -32,7 +32,7 @@
 					href={project.githubUrl}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="flex items-center gap-x-2 rounded-full bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+					class="flex items-center gap-x-2 rounded-full border bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
 				>
 					<Icon icon="octicon:mark-github-16" class="size-4" /><span>GitHub Repository</span>
 				</a>
@@ -42,7 +42,7 @@
 					href={project.liveUrl}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="flex items-center gap-x-2 rounded-full bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+					class="flex items-center gap-x-2 rounded-full border bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
 				>
 					<Icon icon="lucide:external-link" class="size-4" /><span>Live Demo</span>
 				</a>
