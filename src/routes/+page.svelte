@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<meta name="description" content="The personal website of Ahmed Mahgoub." />
+	<meta name="description" content="The personal portfolio website of Ahmed Mahgoub." />
 	<title>Portfolio Ahmed Mahgoub | Home</title>
 </svelte:head>
 

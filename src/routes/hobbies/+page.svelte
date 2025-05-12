@@ -17,7 +17,7 @@
 	<ActivityCard {activity} {showImage} {summary} />
 {/snippet}
 
-<div class="mt-10">
+<div class="mt-10 md:mt-0">
 	<div class="flex items-center gap-x-5">
 		<a href="/" class="inline-flex items-center justify-center">
 			<Icon icon="fluent-arrow-left-28-filled" class="size-6" />
