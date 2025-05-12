@@ -34,11 +34,20 @@
 					href={project.githubUrl}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="flex items-center gap-x-2 rounded-full bg-zinc-100 px-4 py-2 text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 sm:px-5 sm:py-2.5"
+					class="flex items-center gap-x-2 rounded-full border bg-zinc-100 px-4 py-2 text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 sm:px-5 sm:py-2.5"
 				>
 					<Icon icon="octicon:mark-github-16" class="size-4" /><span>GitHub Repository</span>
 				</a>
 			{/if}
+
+			<!-- Thesis PDF button -->
+			<a
+				href="/assets/docs/wallet_thesis.pdf"
+				target="_blank"
+				class="flex items-center gap-x-2 rounded-full border bg-zinc-100 px-4 py-2 text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 sm:px-5 sm:py-2.5"
+			>
+				<Icon icon="lucide:file-text" class="size-4" /><span>View Thesis PDF</span>
+			</a>
 		</div>
 
 		<!-- Technologies used -->
@@ -73,6 +82,60 @@
 		{#each project.content as paragraph}
 			<p class="mb-4 leading-relaxed md:mb-5">{paragraph}</p>
 		{/each}
+	</div>
+
+	<!-- Technology Stack & Learning Goals Section -->
+	<div class="mb-12 md:mb-16">
+		<h2 class="mb-6 text-xl font-semibold sm:text-2xl">Bachelor Thesis Project</h2>
+		<div class="rounded-lg border bg-card p-6 dark:border-slate-800">
+			<div class="flex flex-col gap-6">
+				<p>
+					I developed this project as part of my bachelor thesis at Häme University of Applied
+					Sciences in Finland. It gave me a chance to work with technologies I wanted to explore
+					further. I built the backend services using both NestJS and Spring Boot - two frameworks I
+					was eager to learn.
+				</p>
+				<p>
+					NestJS offered an opinionated TypeScript-based approach that felt similar to Angular,
+					while Spring Boot improved my Java skills and enterprise pattern understanding.
+				</p>
+				<div class="flex justify-center">
+					<img
+						src="/assets/projects/wallet/wallet_architecture.webp"
+						alt="Wallet Application Architecture Diagram"
+						class="max-w-full rounded-md object-contain transition-shadow duration-300 hover:shadow dark:border dark:border-slate-700"
+					/>
+				</div>
+				<div class="flex flex-col gap-6">
+					<p>
+						The diagram shows the system architecture I designed. The microservices communicate with
+						each other using RESTful APIs, and authentication is implemented with Google OAuth2.
+					</p>
+					<p>
+						The project was initially planned to be hosted on Google Cloud Platform. I'm planning on
+						further improving this project soon by adding new features and refining the
+						architecture.
+					</p>
+				</div>
+				<div class="mt-2 flex flex-col justify-between gap-y-5 md:flex-row md:items-center">
+					<p class="flex flex-col gap-1 md:w-8/12">
+						<span>Thesis Title:</span>
+						<span class="text-sm font-light md:text-base"
+							>From Monolith to Microservices: Building Scalable Applications with Kubernetes,
+							CI/CD, and Chaos Engineering
+						</span>
+					</p>
+					<a
+						href="/assets/docs/wallet_thesis.pdf"
+						target="_blank"
+						class="flex h-fit w-fit items-center gap-x-2 rounded-md bg-zinc-100 px-3 py-2 font-primary text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+					>
+						<Icon icon="lucide:file-text" class="size-4" />
+						<span class="">View Thesis PDF</span>
+					</a>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- Architecture Features Section -->
