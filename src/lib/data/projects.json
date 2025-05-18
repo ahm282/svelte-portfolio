@@ -140,5 +140,20 @@
 			"Trello was used to manage the project requirements and track the progress of the project. The project was part of the WTC-Roland Club website project, which aimed to create a platform for managing club events and memberships.",
 			"The project helped me gain a deeper understanding of analyzing and modeling requirements based on client needs. It was a valuable learning experience that has helped me improve my skills in software design and requirements analysis."
 		]
+	},
+	"Ameneties": {
+		"projectName": "Points of Interest Finder",
+		"description": "A website for finding nearby points of interest and amenities.",
+		"techStack": ["HTML", "CSS", "JavaScript", "Overpass", "Leaflet"],
+		"images": ["/assets/projects/pois.webp"],
+		"featured": false,
+		"content": [
+			"For an assignment at HAMK, I developed a simple website for finding amenities around user location. The website allows users to search for amenities based on their location and view details about each amenity.",
+			"The project is built using vanilla JavaScript, HTML, and CSS. It uses the Leaflet and OpenStreetMap to display the amenities on a map.",
+			"I also used Overpass API to fetch the data for the amenities. The API provides a way to query OpenStreetMap data and retrieve information about points of interest.",
+			"It was a fun project to work on and helped me improve my skills in web development and working with maps. I learned how to use Leaflet and OpenStreetMap for displaying maps and geolocation data."
+		],
+		"githubUrl": "",
+		"layout": "standard"
 	}
 }
